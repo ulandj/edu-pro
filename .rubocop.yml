@@ -1,0 +1,31 @@
+inherit_from: .rubocop_todo.yml
+require: rubocop-rspec
+
+Rails:
+  Enabled: true
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/AbcSize:
+  Exclude:
+    - 'spec/**/*'
+
+Style/MixinUsage:
+  Exclude:
+    - 'bin/**/*'
+
+Layout/AlignHash:
+  EnforcedHashRocketStyle: 'table'
+  EnforcedColonStyle: 'table'
+
+AllCops:
+  Exclude:
+    - 'db/**/*'
