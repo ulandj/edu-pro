@@ -35,3 +35,4 @@
 log/
 tmp/
 .env
+.env.*
