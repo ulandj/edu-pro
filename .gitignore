@@ -36,3 +36,4 @@ log/
 tmp/
 .env
 .env.*
+config/master.key
