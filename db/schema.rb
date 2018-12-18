@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_07_114554) do
+ActiveRecord::Schema.define(version: 2018_12_18_091604) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "adminpack"
   enable_extension "plpgsql"
+
+  create_table "channel_settings", force: :cascade do |t|
+    t.bigint "channel_id"
+    t.string "primary_location_id", null: false
+    t.boolean "multi_location_enabled", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["channel_id"], name: "index_channel_settings_on_channel_id"
+  end
 
   create_table "channels", force: :cascade do |t|
     t.bigint "user_id"
@@ -36,5 +45,6 @@ ActiveRecord::Schema.define(version: 2018_12_07_114554) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "channel_settings", "channels"
   add_foreign_key "channels", "users"
 end
