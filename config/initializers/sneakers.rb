@@ -10,4 +10,4 @@ Sneakers.configure(
     durable: true
 )
 
-Sneakers.logger.level = Logger::INFO
+Sneakers.logger.level = Logger::DEBUG
