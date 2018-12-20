@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_18_091604) do
+ActiveRecord::Schema.define(version: 2018_12_20_050937) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "adminpack"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2018_12_18_091604) do
     t.boolean "multi_location_enabled", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "synced", default: false
     t.index ["channel_id"], name: "index_channel_settings_on_channel_id"
   end
 
