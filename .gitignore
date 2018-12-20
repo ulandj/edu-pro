@@ -37,3 +37,4 @@ tmp/
 .env
 .env.*
 config/master.key
+cron_log*
