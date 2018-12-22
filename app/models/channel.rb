@@ -2,6 +2,8 @@ class Channel < ApplicationRecord
   belongs_to :user
   has_one :setting, class_name: 'ChannelSetting'
 
+  has_many :products, dependent: :destroy
+
   scope :active, -> { where(active: true) }
 
   def init_store_session
