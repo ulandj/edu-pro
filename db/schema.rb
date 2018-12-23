@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_22_114929) do
+ActiveRecord::Schema.define(version: 2018_12_23_121944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "adminpack"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2018_12_22_114929) do
     t.datetime "remote_published_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "synced", default: false
     t.index ["channel_id", "remote_id"], name: "index_products_on_channel_id_and_remote_id", unique: true
     t.index ["channel_id"], name: "index_products_on_channel_id"
     t.index ["images"], name: "index_products_on_images", using: :gin
