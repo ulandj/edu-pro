@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_23_121944) do
+ActiveRecord::Schema.define(version: 2018_12_25_144439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "adminpack"
@@ -36,6 +36,10 @@ ActiveRecord::Schema.define(version: 2018_12_23_121944) do
     t.string "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "products_successfully_fetched_at"
+    t.datetime "products_successfully_pulled_at"
+    t.index ["products_successfully_fetched_at"], name: "index_channels_on_products_successfully_fetched_at"
+    t.index ["products_successfully_pulled_at"], name: "index_channels_on_products_successfully_pulled_at"
     t.index ["token"], name: "index_channels_on_token", unique: true
     t.index ["user_id"], name: "index_channels_on_user_id"
   end
