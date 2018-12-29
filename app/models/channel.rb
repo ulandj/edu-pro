@@ -30,4 +30,10 @@ class Channel < ApplicationRecord
     opts = { to_queue: 'pull_channel_settings', persistence: true }
     Sneakers.publish(msg.to_json, opts)
   end
+
+  def enqueue_job_for_pulling_products
+    msg = { channel_id: id }
+    opts = { to_queue: 'product_pulling', persistence: true }
+    Sneakers.publish(msg.to_json, opts)
+  end
 end
