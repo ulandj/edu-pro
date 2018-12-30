@@ -19,10 +19,12 @@
 
 # Learn more: http://github.com/javan/whenever
 
-set :output, "/home/ulan/RubymineProjects/mini_veeqo/shopify_gateway_ruby/cron_log.log"
+set :output, '/home/ulan/RubymineProjects/mini_veeqo/shopify_gateway_ruby/cron_log.log'
 
 every 5.minutes do
-  rake "shopify_gateway:enqueue_job_for_pulling_store_settings"
+  rake 'shopify_gateway:enqueue_job_for_pulling_store_settings'
 end
 
-
+every 1.hour do
+  rake 'shopify_gateway:enqueue_job_for_pulling_products'
+end
