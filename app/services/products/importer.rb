@@ -24,9 +24,9 @@ module Products
         product.remote_created_at = shopify_product.dig('created_at')
         product.remote_updated_at = shopify_product.dig('updated_at')
         product.remote_published_at = shopify_product.dig('published_at')
-        product.variants = { variants: shopify_product.dig('variants') }
-        product.options = { options: shopify_product.dig('options') }
-        product.images = { images: shopify_product.dig('images') }
+        product.variants = shopify_product.dig('variants') || []
+        product.options = shopify_product.dig('options') || []
+        product.images = shopify_product.dig('images') || []
         if product.changed?
           product.synced = false
           product.save!

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_25_144439) do
+ActiveRecord::Schema.define(version: 2019_01_01_090832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "adminpack"
@@ -48,9 +48,9 @@ ActiveRecord::Schema.define(version: 2018_12_25_144439) do
     t.bigint "channel_id"
     t.string "remote_id", null: false
     t.string "title"
-    t.jsonb "variants", default: "{}", null: false
-    t.jsonb "options", default: "{}", null: false
-    t.jsonb "images", default: "{}", null: false
+    t.jsonb "variants", default: [], null: false
+    t.jsonb "options", default: [], null: false
+    t.jsonb "images", default: [], null: false
     t.datetime "remote_created_at"
     t.datetime "remote_updated_at"
     t.datetime "remote_published_at"
