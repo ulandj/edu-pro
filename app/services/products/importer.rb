@@ -30,6 +30,7 @@ module Products
         if product.changed?
           product.synced = false
           product.save!
+          product.send_to_core!
         end
       end
     end
