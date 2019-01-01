@@ -41,6 +41,7 @@ gem 'shopify_api'
 gem 'sneakers', '~> 2.7'
 gem 'oj', '~> 3.7'
 gem 'whenever', '~> 0.10', require: false
+gem 'active_model_serializers', '~> 0.10'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
