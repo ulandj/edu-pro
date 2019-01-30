@@ -2,7 +2,7 @@ module API
   class Base
     def initialize(channel)
       @channel = channel
-      @channel.init_store_session unless @channel.has_store_session?
+      @channel.init_store_session unless @channel.store_session_initiated?
     end
     attr_reader :channel
 

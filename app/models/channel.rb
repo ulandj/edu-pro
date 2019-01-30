@@ -1,8 +1,10 @@
 class Channel < ApplicationRecord
   belongs_to :user
-  has_one :setting, class_name: 'ChannelSetting'
+  has_one :setting, class_name: 'ChannelSetting', dependent: :destroy
 
-  has_many :products, dependent: :destroy
+  has_many :products, foreign_key: :channel_id, dependent: :destroy
+
+  validates :token, uniqueness: true
 
   scope :active, -> { where(active: true) }
 
@@ -11,7 +13,7 @@ class Channel < ApplicationRecord
     ShopifyAPI::Base.activate_session(@shopify_session)
   end
 
-  def has_store_session?
+  def store_session_initiated?
     !!@shopify_session
   end
 
