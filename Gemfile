@@ -51,6 +51,7 @@ group :development, :test do
   gem 'ffaker', '~> 2.10'
   gem 'rubocop',                '~> 0.60', require: false
   gem 'rubocop-rspec',          '~> 1.28', require: false
+  gem 'fuubar', '~> 2.3'
 end
 
 group :development do
